@@ -8,11 +8,14 @@ No arquivo trainingNN.ipynb tem todo o procedimento de download e extração da 
 
 A ideia deste projeto era usar tranferência de aprendizado com a biblioteca PyTorch, no entanto apesar de simples houve alguns impedimentos, que serão explicados como foram contornados a seguir. 
 
-## Falta de hardware adequado para processamento
+## 1. Falta de hardware adequado para processamento
 Nem sempre temos um hardware próprio para processamento de grandes bases de dados, dessa forma para contornar esse problema foi usado o Google Colab, uma ferramenta gratuita que permite que qualquer pessoa possa usufruir de processamento em GPU para construir modelos de aprendizado profundo.
 
 O tempo de treinamento não foi contado metodicamente, no entanto durou aproxidamente 4 horas para treinar 12 épocas, com tamanho de batch igual a 64 na base de treino e 32 na base de validação.
 
-## Dificuldade no acesso aos pesos calculados
+## 2. Dificuldade no acesso aos pesos calculados
 Por razão da rede neural ter sido treinada no Google Colab, tive uma certa dificuldade para acessar os pesos do modelo ao fim do treinamento, esse problema foi contornado com o uso da biblioteca PyDrive. A biblioteca foi usada para realizar o upload do arquivo com os pesos, chamado de checkpoint.pth, para o meu Drive.
 
+## Resultados
+
+No final do treinamento, obtive uma rede com acurácia na base de validação e teste de 82% e 81%, respectivamente. A estrutura da rede e métodos de data augmentation não foram cuidadosamente pensado, já que o objetivo não era criar uma rede especialista nesse problema e sim testar as bibliotecas e ferramentas citadas acima.
